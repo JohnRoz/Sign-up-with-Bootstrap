@@ -1,34 +1,63 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Sign Up</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="MyCSS.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
+    <!-- Bootstrap - Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Bootstrap - Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap - something for phones-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        function check_name(){
+        var real_name = $("#name").html();
+        if(!/[^a-zA-Z]/.test($("#name").html)) //TODO: FIX THIS !!!
+            alert("WRONG!");
+
+        else alert("GOOD");
+        }
+
+    </script
 
 </head>
 
 <body>
+<div class ="container">
+    <h1>Sign Up:</h1>
+    <br/>
     <form id="signUp">
-        <input type ="username" id="username" placeholder="Username">
+        <input type="username" id="username" placeholder="Username" />
         <br/>
-        <input type="email" id="email" placeholder="E-mail">
+        <input type="email" id="email" placeholder="E-mail" />
         <br/>
-        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="password" placeholder="Password" />
         <br/>
-        <input type=password" id="confirmPassword" placeholder="Confirm Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" />
         <br/>
-        <input type="tel" id="phoneNum" placeholder="Phone Number">
+        <input type="username" id="name" placeholder="Real Name" />
         <br/>
-        <input type="checkbox" id="checkBox">
+        <input type="tel " id="phoneNum" placeholder="Phone Number" />
+        <br/>
+        <input type="date" id="date" />
+        <br/><br/><br/><br/>
+        <textarea readonly="readonly">lorem1000</textarea>
+        <br/>
+        <input type="checkbox" id="checkBox">I agree to the terms & conditions.</input>
+        <br/><br/>
+        <button onClick="check_name()">Send</button>
     </form>
-
+</div>
 </body>
 
 </html>
