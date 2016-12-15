@@ -3,6 +3,7 @@ function validate_details() {
         is_real_name_OK()
         && has_agreed_to_terms()
         && is_valid_password()
+        &&is_valid_username()
     )
         alert("THANK'S FOR SIGNING UP !");
 
@@ -22,23 +23,31 @@ function has_agreed_to_terms() {
 }
 
 function is_valid_password() {
-    var username = document.getElementById("passwordInput").value;
+    var password = document.getElementById("passwordInput").value;
 
-    var containsSmallLetter = /[a-z]/.test(username);
-    var containsCapitalLetters = /[A-Z]/.test(username);
-    var containsDigit = /\d/.test(username);
-    var containsSpecial = /[^a-zA-Z\d]/.test(username);
+    var containsSmallLetter = /[a-z]/.test(password);
+    var containsCapitalLetters = /[A-Z]/.test(password);
+    var containsDigit = /\d/.test(password);
+    var containsSpecial = /[^a-zA-Z\d]/.test(password);
 
     if (!containsSmallLetter || !containsCapitalLetters || !containsDigit || !containsSpecial)
         alert("Password needs to contain lowercase letters, uppercase letters, digits and special characters !");
     else {
-        if (!(username.length >= 8))
+        if (!(password.length >= 8))
             alert("Password's length must be longer that 8 characters !");
         else
             return true;
     }
+}
 
+function is_valid_username(){
+    var username = document.getElementById("usernameInput").value;
 
+    if(password.length>20){
+        alert("username's length mustn't be longer than 20 characters !")
+        return false;
+    }
+    return true;
 }
 
 /*
